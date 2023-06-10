@@ -19,6 +19,7 @@ public class ProgramaAritmetico {
     private int rRealizadas;
     private int nivelDificultad;
     private int tipoProblema;
+    private static final int NUM_PREGUNTAS = 10;
 
     public ProgramaAritmetico() {
         scanner = new Scanner(System.in);
@@ -61,7 +62,7 @@ public class ProgramaAritmetico {
         String[] respuestasPositivas = {"Muy bien", "Excelente", "Buen trabajo", "Sigue así"};
         String[] respuestasNegativas = {"Incorrecto", "Inténtalo de nuevo", "Respuesta incorrecta"};
 
-        while (rRealizadas < 10 && (rCorrectas + rIncorrectas) < 10) {
+        while (rRealizadas < NUM_PREGUNTAS && (rCorrectas + rIncorrectas) < NUM_PREGUNTAS) {
             int numero1, numero2, resultado;
             String operador;
 
@@ -140,7 +141,7 @@ public class ProgramaAritmetico {
             System.out.println(numero1 + " " + operador + " " + numero2 + " = ?");
             int respuestaUsuario = scanner.nextInt();
 
-            while (respuestaUsuario != resultado && rRealizadas < 10) {
+            while (respuestaUsuario != resultado && rRealizadas < NUM_PREGUNTAS) {
                 System.out.println(respuestasNegativas[random.nextInt(respuestasNegativas.length)]);
                 rIncorrectas++;
                 rRealizadas++;
