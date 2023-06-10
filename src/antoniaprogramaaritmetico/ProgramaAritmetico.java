@@ -59,7 +59,8 @@ public class ProgramaAritmetico {
 
     private void generarProblemasAritmeticos() {
         String[] respuestasPositivas = {"Muy bien", "Excelente", "Buen trabajo", "Sigue así"};
-        
+        String[] respuestasNegativas = {"Incorrecto", "Inténtalo de nuevo", "Respuesta incorrecta"};
+
         while (rRealizadas < 10 && (rCorrectas + rIncorrectas) < 10) {
             int numero1, numero2, resultado;
             String operador;
@@ -140,7 +141,7 @@ public class ProgramaAritmetico {
             int respuestaUsuario = scanner.nextInt();
 
             while (respuestaUsuario != resultado && rRealizadas < 10) {
-                System.out.println("Respuesta incorrecta. Inténtalo nuevamente:");
+                System.out.println(respuestasNegativas[random.nextInt(respuestasNegativas.length)]);
                 rIncorrectas++;
                 rRealizadas++;
                 respuestaUsuario = scanner.nextInt();
@@ -149,8 +150,7 @@ public class ProgramaAritmetico {
             if (respuestaUsuario == resultado) {
                 rCorrectas++;
                 rRealizadas++;
-                int seleccion = random.nextInt(4);
-                System.out.println(respuestasPositivas[seleccion]);
+                System.out.println(respuestasPositivas[random.nextInt(respuestasPositivas.length)]);
             }
         }
     }
