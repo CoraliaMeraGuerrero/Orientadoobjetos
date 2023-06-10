@@ -138,7 +138,7 @@ public class ProgramaAritmetico {
             int respuestaUsuario = scanner.nextInt();
 
             while (respuestaUsuario != resultado && rRealizadas < 10) {
-                System.out.println("Respuesta incorrecta. Intentalo nuevamente:");
+                System.out.println("Respuesta incorrecta. Inténtalo nuevamente:");
                 rIncorrectas++;
                 rRealizadas++;
                 respuestaUsuario = scanner.nextInt();
@@ -159,7 +159,7 @@ public class ProgramaAritmetico {
                         System.out.println("Buen Trabajo");
                         break;
                     case 4:
-                        System.out.println("Sigue Asi");
+                        System.out.println("Sigue Así");
                         break;
                 }
             }
@@ -178,7 +178,7 @@ public class ProgramaAritmetico {
         if (porcentajeCorrectas < 75) {
             System.out.println("Por favor, pide ayuda adicional a tu instructor.");
         } else {
-            System.out.println("Felicidades,Listo para pasar al siguiente nivel!");
+            System.out.println("¡Felicidades! Listo para pasar al siguiente nivel.");
         }
     }
 
