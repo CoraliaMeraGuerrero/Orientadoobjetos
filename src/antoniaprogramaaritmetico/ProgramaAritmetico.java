@@ -36,6 +36,7 @@ public class ProgramaAritmetico {
         generarProblemasAritmeticos();
         mostrarResultados();
         mostrarMensaje();
+        reiniciarPrograma();
         scanner.close();
     }
 
@@ -168,7 +169,23 @@ public class ProgramaAritmetico {
         if (porcentajeCorrectas < 75) {
             System.out.println("Por favor, pide ayuda adicional a tu instructor.");
         } else {
-            System.out.println("¡Felicidades! Listo para pasar al siguiente nivel.");
+            System.out.println("¡Felicidades! Estás listo para pasar al siguiente nivel.");
+        }
+    }
+
+    private void reiniciarPrograma() {
+        System.out.println("¿Deseas iniciar el programa nuevamente? (Sí: 1 / No: 0)");
+        int reiniciar = scanner.nextInt();
+        if (reiniciar == 1) {
+            rCorrectas = 0;
+            rIncorrectas = 0;
+            rRealizadas = 0;
+            NivelDificultad();
+            TipoProblema();
+            generarProblemasAritmeticos();
+            mostrarResultados();
+            mostrarMensaje();
+            reiniciarPrograma();
         }
     }
 
