@@ -58,6 +58,8 @@ public class ProgramaAritmetico {
     }
 
     private void generarProblemasAritmeticos() {
+        String[] respuestasPositivas = {"Muy bien", "Excelente", "Buen trabajo", "Sigue así"};
+        
         while (rRealizadas < 10 && (rCorrectas + rIncorrectas) < 10) {
             int numero1, numero2, resultado;
             String operador;
@@ -147,21 +149,8 @@ public class ProgramaAritmetico {
             if (respuestaUsuario == resultado) {
                 rCorrectas++;
                 rRealizadas++;
-                int seleccion = random.nextInt(4) + 1;
-                switch (seleccion) {
-                    case 1:
-                        System.out.println("Muy Bien");
-                        break;
-                    case 2:
-                        System.out.println("Excelente!");
-                        break;
-                    case 3:
-                        System.out.println("Buen Trabajo");
-                        break;
-                    case 4:
-                        System.out.println("Sigue Así");
-                        break;
-                }
+                int seleccion = random.nextInt(4);
+                System.out.println(respuestasPositivas[seleccion]);
             }
         }
     }
